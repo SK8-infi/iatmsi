@@ -1,0 +1,21 @@
+// Hero data — ICGST-2026
+
+export const heroCarousel = [
+    { id: 'hero-1', url: 'https://lh3.googleusercontent.com/d/1OoQlP6Ucwi-7L4Oe_0Sl8TCAu8urbm2w', alt: 'ABV-IIITM, Gwalior Campus' },
+    { id: 'hero-2', url: 'https://lh3.googleusercontent.com/d/1AczsTl9ZAEC0j4xj6NSey5ml9YsMBISh', alt: 'Academic session' },
+    { id: 'hero-3', url: 'https://lh3.googleusercontent.com/d/1sWTOeNuVDQxUhysQfr9DS6z9aJ5Lypj5', alt: 'Research presentation' },
+    { id: 'hero-4', url: 'https://lh3.googleusercontent.com/d/1bDYy_ReDauwg-bWK_cXmcHeNcSC7EWVh', alt: 'ABV-IIITM, Gwalior' },
+];
+
+export const heroCta = {
+    primary: {
+        label: 'Register Now',
+        route: '/registration',
+    },
+    secondary: {
+        label: 'View Tracks',
+        route: '/call-for-papers/tracks',
+    }
+};
+
+export const heroTagline = 'Green Technologies • Sustainable Innovation • Climate Action';
