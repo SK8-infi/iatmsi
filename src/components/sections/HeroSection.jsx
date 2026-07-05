@@ -5,7 +5,7 @@ import { conferenceInfo } from '../../data/conferenceData';
 import { heroCarousel, heroCta, heroTagline } from '../../data/heroData';
 import LatestUpdates from './LatestUpdates';
 
-export default function HeroSection({ title, subtitle, isHomePage = true }) {
+export default function HeroSection({ title, subtitle, isHomePage = false }) {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     // Auto-advance carousel only on home page
