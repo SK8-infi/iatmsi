@@ -44,8 +44,7 @@ export default function IntroSection() {
                         {/* Decorative background */}
                         <div className="absolute -inset-4 bg-gradient-to-tr from-primary-100 to-primary-50 rounded-[2rem] opacity-60" />
                         <div className="absolute -inset-2 bg-white/40 rounded-[2rem] backdrop-blur-sm" />
-
-                        <div className="relative rounded-2xl shadow-xl border border-white/50 bg-white overflow-hidden">
+                        <div className="relative rounded-2xl shadow-xl border border-white/50 bg-gray-50 overflow-hidden">
                             <div className="bg-primary-900 p-5 text-white">
                                 <h3 className="text-xl font-bold font-bold !text-white mb-1.5">{conferenceInfo.shortTitle}</h3>
                                 <p className="text-xs !text-white opacity-90 leading-relaxed">{conferenceInfo.fullTitle}</p>

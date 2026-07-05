@@ -14,10 +14,18 @@ export default function SectionContainer({
     const style = background === 'dark' ? { backgroundColor: '#002855' } : {};
 
     return (
-        <section id={id} className={`py-16 md:py-20 ${backgrounds[background]} ${className}`} style={style}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {children}
-            </div>
+        <section id={id} className={`py-8 md:py-12 ${background === 'dark' ? 'bg-[#002855] text-white' : ''} ${background === 'primary' ? 'bg-primary-50' : ''} ${className}`} style={style}>
+            {background === 'white' || background === 'light' ? (
+                <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="bg-gray-100 rounded-[2.5rem] shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] ring-1 ring-slate-900/5 p-8 md:p-14">
+                        {children}
+                    </div>
+                </div>
+            ) : (
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {children}
+                </div>
+            )}
         </section>
     );
 }

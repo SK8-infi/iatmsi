@@ -20,7 +20,7 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 flex flex-col">
+            <header className="relative z-50 w-full bg-gray-100/90 backdrop-blur-md border-b border-gray-200 flex flex-col">
                 {/* Top Branding Bar - College Branding */}
                 <a
                     href={siteConfig.branding.instituteUrl}
@@ -138,7 +138,7 @@ export default function Navbar() {
                                         style={{ color: 'white' }}
                                         className={({ isActive }) => `py-3 text-base font-medium transition-colors !text-white ${isActive ? 'font-bold' : ''}`}
                                     >
-                                        {item.label}
+                                        {item.label.toUpperCase()}
                                     </NavLink>
                                 ) : (
                                     <div key={item.id} className="w-full flex flex-col items-center">
@@ -147,7 +147,7 @@ export default function Navbar() {
                                             style={{ color: 'white' }}
                                             className="flex items-center justify-center gap-2 py-3 text-base font-medium !text-white transition-colors w-full"
                                         >
-                                            {item.label}
+                                            {item.label.toUpperCase()}
                                             <svg className={`w-4 h-4 transition-transform duration-200 ${openDropdowns[item.id] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                             </svg>

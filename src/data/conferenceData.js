@@ -5,11 +5,11 @@ export const conferenceInfo = {
     fullTitle: 'IEEE International Conference on Interdisciplinary Approaches in Technology and Management for Social Innovation (IATMSI-2027)',
     mode: 'Hybrid',
     dates: 'May 20-22, 2027',
-    organizedBy: 'Center of Excellence - Sustainable Technology and Green Mobility',
+    organizedBy: 'ABV-IIITM IEEE Student Branch, Gwalior, Madhya Pradesh, India',
     venue: {
         name: 'Atal Bihari Vajpayee – Indian Institute of Information Technology and Management (ABV-IIITM)',
         shortName: 'ABV-IIITM, Gwalior',
-        address: 'Morena Link Road, Gwalior, Madhya Pradesh 474015, India',
+        address: 'ABV-IIITM Gwalior, Morena Rd, IIITM Campus, Gwalior, Madhya Pradesh, India- 474015',
         mapEmbedUrl: 'https://maps.google.com/maps?q=ABV-IIITM+Gwalior+%4026.2485,78.1746&z=15&output=embed',
     },
 };

@@ -98,6 +98,6 @@ export const organizingChairs = [
 export const contactPerson = {
     name: 'TBD',
     designation: 'Contact Person',
-    email: 'iatmsi2027@iiitm.ac.in',
-    phones: ['TBD'],
+    email: 'iatmsi@iiitm.ac.in',
+    phones: ['+91-8962280784', '+91-9202731889'],
 };

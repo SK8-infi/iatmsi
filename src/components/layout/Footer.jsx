@@ -1,20 +1,10 @@
 import { conferenceInfo } from '../../data/conferenceData';
 import { contactPerson } from '../../data/committeeData';
-import { navigationTree } from '../../data/navigationData';
+import { navigationTree, footerQuickLinks } from '../../data/navigationData';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
-    // Flatten navigation tree to get all unique links for Quick Links
-    const quickLinks = navigationTree.reduce((acc, item) => {
-        if (item.type === 'link') {
-            acc.push({ id: item.id, label: item.label, path: item.path });
-        } else if (item.type === 'dropdown') {
-            item.items.forEach(subItem => {
-                acc.push({ id: subItem.id, label: subItem.label, path: subItem.path });
-            });
-        }
-        return acc;
-    }, []);
+    // We now use footerQuickLinks instead of flattening navigationTree
 
     return (
         <footer className="relative bg-gradient-to-b from-[#002855] to-[#001a3a] text-white overflow-hidden font-sans border-t-[3px] border-[#4da6ff]">
@@ -39,8 +29,7 @@ export default function Footer() {
                         <div className="bg-white/5 rounded-xl p-4 border border-white/10 w-full backdrop-blur-sm shadow-inner group hover:bg-white/10 transition-colors duration-300">
                             <p className="!text-white text-xs font-bold uppercase tracking-wider mb-2 transition-colors text-opacity-80">Organized By</p>
                             <p className="!text-white font-semibold text-sm leading-snug">
-                                {conferenceInfo.organizedBy}<br />
-                                <span className="!text-white font-normal text-opacity-90">{conferenceInfo.venue.shortName}</span>
+                                {conferenceInfo.organizedBy}
                             </p>
                         </div>
                     </div>
@@ -51,7 +40,7 @@ export default function Footer() {
                             Quick Links
                         </h4>
                         <ul className="space-y-2 text-sm text-center md:text-left">
-                            {quickLinks.slice(0, 9).map((link) => (
+                            {footerQuickLinks.map((link) => (
                                 <li key={link.id}>
                                     <Link to={link.path} className="!text-white hover:text-[#4da6ff] transition-colors flex items-center gap-2 justify-center md:justify-start group">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#4da6ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>

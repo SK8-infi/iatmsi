@@ -29,7 +29,7 @@ export default function AboutInstitute() {
                             <div className="absolute -inset-4 bg-gradient-to-tr from-primary-100 to-primary-50 rounded-[2rem] opacity-60" />
                             <div className="absolute -inset-2 bg-white/40 rounded-[2rem] backdrop-blur-sm" />
 
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl group border border-white/50 bg-white">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl group border border-white/50 bg-gray-50">
                                 <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500" />
                                 <img
                                     src="https://lh3.googleusercontent.com/d/1bDYy_ReDauwg-bWK_cXmcHeNcSC7EWVh"
