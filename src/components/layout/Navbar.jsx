@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 import { navigationTree } from '../../data/navigationData';
 import { siteConfig } from '../../data/siteConfig';
@@ -8,6 +8,11 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdowns, setOpenDropdowns] = useState({});
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const isDropdownActive = (item) => {
+        return item.items?.some(subItem => location.pathname === subItem.path);
+    };
 
     const toggleDropdown = (id) => {
         setOpenDropdowns(prev => ({ ...prev, [id]: !prev[id] }));
@@ -80,15 +85,15 @@ export default function Navbar() {
                                             key={item.id}
                                             to={item.path}
                                             className={({ isActive }) =>
-                                                `px-1 py-1 xl:px-2 text-[10px] xl:text-xs font-medium tracking-wide uppercase transition-colors
-                                                ${isActive ? 'text-primary-700 font-bold' : 'text-slate-700 hover:text-primary-700'}`
+                                                `px-1 py-1 xl:px-2 text-[10px] xl:text-xs font-medium tracking-wide uppercase transition-colors border-b-2
+                                                ${isActive ? 'text-primary-900 border-primary-900 font-bold' : 'text-slate-700 border-transparent hover:text-primary-700 hover:border-primary-700/30'}`
                                             }
                                         >
                                             {item.label}
                                         </NavLink>
                                     ) : (
-                                        <div key={item.id} className="relative group">
-                                            <button className="flex items-center px-1 py-1 xl:px-2 text-[10px] xl:text-xs font-medium tracking-wide uppercase text-slate-700 hover:text-primary-700 transition-colors">
+                                        <div key={item.id} className="relative group flex">
+                                            <button className={`flex items-center px-1 py-1 xl:px-2 text-[10px] xl:text-xs font-medium tracking-wide uppercase transition-colors border-b-2 ${isDropdownActive(item) ? 'text-primary-900 border-primary-900 font-bold' : 'text-slate-700 border-transparent hover:text-primary-700 hover:border-primary-700/30'}`}>
                                                 {item.label}
                                                 <svg className="w-3 h-3 ml-0.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
