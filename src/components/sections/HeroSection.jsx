@@ -31,7 +31,7 @@ export default function HeroSection({ title, subtitle, isHomePage = false }) {
 
     return (
         <>
-            <section className={`relative w-full overflow-hidden ${isHomePage ? 'h-[77vh] min-h-[550px] max-h-[770px]' : 'h-[45vh] min-h-[350px] max-h-[440px]'}`}>
+            <section className={`relative w-full overflow-hidden ${isHomePage ? 'h-[77vh] min-h-[550px] max-h-[770px]' : 'h-[50vh] min-h-[400px] max-h-[500px]'}`}>
                 {/* Carousel Container */}
                 <div className="absolute inset-0">
                     {heroCarousel.map((image, index) => (
