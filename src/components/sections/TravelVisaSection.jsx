@@ -29,7 +29,7 @@ export default function TravelVisaSection() {
                         </div>
                         <div className="p-6 space-y-6">
                             <p className="text-slate-700 text-base leading-relaxed">
-                                You will need to apply for a <strong>Conference Visa</strong> to attend ICGST-2026. India offers two types of Conference Visas:
+                                You will need to apply for a <strong>Conference Visa</strong> to attend IATMSI-2027. India offers two types of Conference Visas:
                             </p>
                             <div className="grid md:grid-cols-2 gap-6">
                                 {visaInfo.types.map((type, index) => (
@@ -90,13 +90,13 @@ export default function TravelVisaSection() {
                             {visaInfo.invitationLetterInfo}
                         </p>
                         <a
-                            href="mailto:icgst2026@iiitm.ac.in?subject=Visa Invitation Letter Request — ICGST-2026"
+                            href="mailto:iatmsi2027@iiitm.ac.in?subject=Visa Invitation Letter Request — IATMSI-2027"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-[#002855] !text-white font-semibold rounded-lg hover:bg-[#001a3a] transition-colors shadow-md shadow-blue-200"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            icgst2026@iiitm.ac.in
+                            iatmsi2027@iiitm.ac.in
                         </a>
                     </div>
 

@@ -1,4 +1,4 @@
-// Submission data — ICGST-2026
+// Submission data — IATMSI-2027
 
 export const submissionGuidelines = [
     '**Page limit:** Maximum of **6 pages** (10-point, IEEE two-column), including figures, tables, and references.',
@@ -10,7 +10,7 @@ export const submissionGuidelines = [
 ];
 
 export const submissionPortalInfo = {
-  description: 'Prospective authors are invited to submit original technical papers to ICGST-2026. Submissions must follow the standard IEEE conference template and be written in English. The extended version of the selected papers may be considered for publication in the journal post-evaluation.\n\nBy submitting, authors commit that (if accepted) they will prepare a compliant camera-ready version, complete the required copyright steps, and present the work at the conference.\n\nFor you to be able to access the submission system as an author, reviewer, program committee member, session chair, etc., you need to create an account on Microsoft CMT using the Submit button given below:',
+  description: 'Prospective authors are invited to submit original technical papers to IATMSI-2027. Submissions must follow the standard IEEE conference template and be written in English. The extended version of the selected papers may be considered for publication in the journal post-evaluation.\n\nBy submitting, authors commit that (if accepted) they will prepare a compliant camera-ready version, complete the required copyright steps, and present the work at the conference.\n\nFor you to be able to access the submission system as an author, reviewer, program committee member, session chair, etc., you need to create an account on Microsoft CMT using the Submit button given below:',
 };
 
 export const templateInfo = {

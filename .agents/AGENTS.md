@@ -161,7 +161,7 @@ conference from this template, populate these files with the new conference's da
 export const siteConfig = {
   // SEO & HTML <head>
   seo: {
-    title: 'string',             // HTML <title>, e.g. "ICGST-2026 | Full Title"
+    title: 'string',             // HTML <title>, e.g. "IATMSI-2027 | Full Title"
     description: 'string',       // <meta name="description">
     keywords: 'string',          // <meta name="keywords">
     author: 'string',            // <meta name="author">
@@ -240,7 +240,7 @@ export const pageRegistry = [
 // Conference data — <ConferenceShortTitle>
 
 export const conferenceInfo = {
-  shortTitle: 'string',         // e.g. "ICGST-2026"
+  shortTitle: 'string',         // e.g. "IATMSI-2027"
   fullTitle: 'string',          // Full conference name
   edition: 'string|null',       // e.g. "1st", "2nd" (optional)
   mode: 'string',               // "Hybrid" | "In-Person" | "Virtual"
@@ -732,8 +732,8 @@ These rules exist specifically to enable the future Tauri no-code editor:
 ```js
 // ✅ Correct — static, parseable
 export const conferenceInfo = {
-  shortTitle: 'ICGST-2026',
-  dates: 'October 23-25, 2026',
+  shortTitle: 'IATMSI-2027',
+  dates: 'May 20-22, 2027',
 };
 
 // ❌ Wrong — computed value, not statically parseable
@@ -779,7 +779,7 @@ machine-parseable format. This allows the Tauri editor to auto-generate editing 
 ```js
 /**
  * @schema conferenceInfo
- * @field shortTitle {string} Short conference acronym (e.g. "ICGST-2026")
+ * @field shortTitle {string} Short conference acronym (e.g. "IATMSI-2027")
  * @field fullTitle {string} Full conference name
  * @field mode {enum: "Hybrid"|"In-Person"|"Virtual"} Conference delivery mode
  * @field dates {string} Human-readable date range

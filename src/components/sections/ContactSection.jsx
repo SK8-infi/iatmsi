@@ -22,7 +22,7 @@ export default function ContactSection() {
                                 className="!mb-4"
                             />
                             <p className="text-neutral-600 text-base leading-relaxed">
-                                For any queries related to ICGST-2026, feel free to reach out to us.
+                                For any queries related to IATMSI-2027, feel free to reach out to us.
                             </p>
                         </div>
 

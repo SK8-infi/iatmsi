@@ -1,4 +1,4 @@
-// Page Registry — ICGST-2026
+// Page Registry — IATMSI-2027
 
 export const sectionManifest = [
     { id: 'hero', component: 'HeroSection', requiresData: ['heroData'] },
@@ -25,7 +25,7 @@ export const pageRegistry = [
         title: 'About the Conference',
         path: '/about',
         sections: [
-            { sectionId: 'hero', props: { title: "About the Conference", subtitle: `Learn more about ICGST-2026 and our vision for green and sustainable technologies.` } },
+            { sectionId: 'hero', props: { title: "About the Conference", subtitle: `Learn more about IATMSI-2027 and our vision for green and sustainable technologies.` } },
             { sectionId: 'aboutRationaleSection', props: {} },
             { sectionId: 'aboutObjectivesSection', props: {} }
         ]
@@ -44,7 +44,7 @@ export const pageRegistry = [
         title: 'Organizing Committee',
         path: '/committee',
         sections: [
-            { sectionId: 'hero', props: { title: "Organizing Committee", subtitle: `Meet the distinguished organizing committee of ICGST-2026.` } },
+            { sectionId: 'hero', props: { title: "Organizing Committee", subtitle: `Meet the distinguished organizing committee of IATMSI-2027.` } },
             { sectionId: 'committeeSection', props: {} }
         ]
     },
@@ -53,7 +53,7 @@ export const pageRegistry = [
         title: 'Contact Us',
         path: '/contact',
         sections: [
-            { sectionId: 'hero', props: { title: "Contact Us", subtitle: `Get in touch with the ICGST-2026 organizing committee.` } },
+            { sectionId: 'hero', props: { title: "Contact Us", subtitle: `Get in touch with the IATMSI-2027 organizing committee.` } },
             { sectionId: 'contactSection', props: {} }
         ]
     },
@@ -71,7 +71,7 @@ export const pageRegistry = [
         title: 'Important Dates',
         path: '/important-dates',
         sections: [
-            { sectionId: 'hero', props: { title: "Important Dates", subtitle: `Mark your calendar with these key deadlines and dates for ICGST-2026.` } },
+            { sectionId: 'hero', props: { title: "Important Dates", subtitle: `Mark your calendar with these key deadlines and dates for IATMSI-2027.` } },
             { sectionId: 'importantDatesSection', props: {} }
         ]
     },
@@ -89,7 +89,7 @@ export const pageRegistry = [
         title: 'Registration',
         path: '/registration',
         sections: [
-            { sectionId: 'hero', props: { title: "Registration", subtitle: `Register for ICGST-2026 and secure your participation in this premier international conference.` } },
+            { sectionId: 'hero', props: { title: "Registration", subtitle: `Register for IATMSI-2027 and secure your participation in this premier international conference.` } },
             { sectionId: 'registrationSection', props: {} }
         ]
     },
@@ -108,7 +108,7 @@ export const pageRegistry = [
         title: 'Travel Visa Information',
         path: '/travel/visa',
         sections: [
-            { sectionId: 'hero', props: { title: "Travel Visa Information", subtitle: `Complete visa guidance for ICGST-2026 international attendees` } },
+            { sectionId: 'hero', props: { title: "Travel Visa Information", subtitle: `Complete visa guidance for IATMSI-2027 international attendees` } },
             { sectionId: 'travelVisaSection', props: {} }
         ]
     },
@@ -117,7 +117,7 @@ export const pageRegistry = [
         title: 'Venue & Directions',
         path: '/travel/venue',
         sections: [
-            { sectionId: 'hero', props: { title: "Venue & Directions", subtitle: `How to reach ABV-IIITM, Gwalior for ICGST-2026` } },
+            { sectionId: 'hero', props: { title: "Venue & Directions", subtitle: `How to reach ABV-IIITM, Gwalior for IATMSI-2027` } },
             { sectionId: 'venueDirectionsSection', props: {} }
         ]
     }

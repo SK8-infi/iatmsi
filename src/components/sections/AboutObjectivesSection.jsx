@@ -8,7 +8,7 @@ export default function AboutObjectivesSection() {
             <div className="max-w-4xl mx-auto text-center mb-12">
                 <SectionHeader
                     title="Conference Objectives"
-                    subtitle="The primary objectives of ICGST-2026"
+                    subtitle="The primary objectives of IATMSI-2027"
                 />
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

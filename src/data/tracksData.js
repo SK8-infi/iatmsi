@@ -1,4 +1,4 @@
-// Tracks data - ICGST-2026
+// Tracks data - IATMSI-2027
 
 export const tracks = [
     {

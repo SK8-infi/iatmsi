@@ -1,4 +1,4 @@
-// Navigation data — ICGST-2026
+// Navigation data — IATMSI-2027
 
 export const navigationTree = [
   {

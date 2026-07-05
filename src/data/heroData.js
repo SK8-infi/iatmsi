@@ -1,4 +1,4 @@
-// Hero data — ICGST-2026
+// Hero data — IATMSI-2027
 
 export const heroCarousel = [
     { id: 'hero-1', url: 'https://lh3.googleusercontent.com/d/1OoQlP6Ucwi-7L4Oe_0Sl8TCAu8urbm2w', alt: 'ABV-IIITM, Gwalior Campus' },
@@ -18,4 +18,4 @@ export const heroCta = {
     }
 };
 
-export const heroTagline = 'Green Technologies • Sustainable Innovation • Climate Action';
+export const heroTagline = '(Conference Record: ) Scopus Indexed, Hybrid Event, May 20-22, 2027';

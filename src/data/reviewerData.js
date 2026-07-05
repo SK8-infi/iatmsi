@@ -1,7 +1,7 @@
-// Reviewer data — ICGST-2026
+// Reviewer data — IATMSI-2027
 
 export const reviewerInfo = {
-  intro: 'Join our esteemed Reviewer Panel for ICGST-2026.',
+  intro: 'Join our esteemed Reviewer Panel for IATMSI-2027.',
   whoCanApply: [
     'Open to academicians, researchers, and professionals with expertise in relevant domains.'
   ],

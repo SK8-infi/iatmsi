@@ -1,7 +1,7 @@
-// Travel data — ICGST-2026
+// Travel data — IATMSI-2027
 
 export const visaInfo = {
-  intro: 'We look forward to welcoming you to **ICGST-2026** at ABV-IIITM, Gwalior, India! To ensure a smooth visa application process, please follow the instructions below.',
+  intro: 'We look forward to welcoming you to **IATMSI-2027** at ABV-IIITM, Gwalior, India! To ensure a smooth visa application process, please follow the instructions below.',
   types: [
     {
       name: 'e-Conference Visa',
@@ -16,9 +16,9 @@ export const visaInfo = {
   ],
   requiredDocuments: [
     '**Valid Passport:** Must be valid for at least six months from your planned arrival date in India with at least two blank pages.',
-    '**Visa Invitation Letter:** An official invitation letter from the ICGST-2026 organizing committee. Fill out the visa letter request form (link below).',
+    '**Visa Invitation Letter:** An official invitation letter from the IATMSI-2027 organizing committee. Fill out the visa letter request form (link below).',
     '**Clearance from Ministry of External Affairs (MEA):** Political clearance documents from MEA, Government of India (attached in your confirmation email).',
-    '**Clearance from Ministry of Home Affairs (MHA):** Event clearance documents. Delegates from Afghanistan, Pakistan, Iraq, Sudan, foreigners of Pakistani origin, and stateless persons should contact icgst2026@iiitm.ac.in directly.',
+    '**Clearance from Ministry of Home Affairs (MHA):** Event clearance documents. Delegates from Afghanistan, Pakistan, Iraq, Sudan, foreigners of Pakistani origin, and stateless persons should contact iatmsi2027@iiitm.ac.in directly.',
     '**Passport-Sized Photo:** A recent colour photograph with a white background (specific dimensions as per portal requirements).',
     '**Accommodation Details:** Proof of hotel booking or conference accommodation at ABV-IIITM, Gwalior.',
     '**Flight Itinerary:** A copy of your return/onward flight itinerary.',
@@ -39,7 +39,7 @@ export const visaInfo = {
     'Visa processing typically takes 2–3 weeks.',
   ],
   processingTime: '3-5 Days for e-Conference, 2-3 Weeks for Traditional.',
-  warningNote: 'We strongly recommend applying for your visa at least **8–10 weeks** before the conference dates (October 23-25, 2026) to account for processing delays. For any assistance, contact us at icgst2026@iiitm.ac.in.',
+  warningNote: 'We strongly recommend applying for your visa at least **8–10 weeks** before the conference dates (May 20-22, 2027) to account for processing delays. For any assistance, contact us at iatmsi2027@iiitm.ac.in.',
 };
 
 export const venueInfo = {

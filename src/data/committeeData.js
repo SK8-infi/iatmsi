@@ -1,4 +1,4 @@
-// Committee data - ICGST-2026
+// Committee data - IATMSI-2027
 
 export const honoraryGeneralChairs = [
     {
@@ -98,6 +98,6 @@ export const organizingChairs = [
 export const contactPerson = {
     name: 'TBD',
     designation: 'Contact Person',
-    email: 'icgst2026@iiitm.ac.in',
+    email: 'iatmsi2027@iiitm.ac.in',
     phones: ['TBD'],
 };

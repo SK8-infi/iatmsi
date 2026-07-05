@@ -1,4 +1,4 @@
-// Registration data - ICGST-2026
+// Registration data - IATMSI-2027
 
 export const feeStructure = [
     {

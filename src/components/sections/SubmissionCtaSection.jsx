@@ -13,7 +13,7 @@ export default function SubmissionCtaSection() {
                     {submissionCta.description}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button href="https://cmt3.research.microsoft.com/ICGST2026/Submission/Index" variant="primary" size="md" target="_blank" rel="noopener noreferrer">
+                    <Button href="https://cmt3.research.microsoft.com/IATMSI2027/Submission/Index" variant="primary" size="md" target="_blank" rel="noopener noreferrer">
                         {submissionCta.buttonLabel}
                     </Button>
                 </div>
