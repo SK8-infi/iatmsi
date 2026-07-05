@@ -1,4 +1,4 @@
-// Hero data — IATMSI-2027
+// Hero data - IATMSI-2027
 
 export const heroCarousel = [
     { id: 'hero-1', url: 'https://lh3.googleusercontent.com/d/1OoQlP6Ucwi-7L4Oe_0Sl8TCAu8urbm2w', alt: 'ABV-IIITM, Gwalior Campus' },

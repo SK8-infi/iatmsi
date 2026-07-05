@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 import { conferenceInfo } from '../../data/conferenceData';
 import { heroCarousel, heroCta, heroTagline } from '../../data/heroData';
-import LatestUpdates from './LatestUpdates';
 
 export default function HeroSection({ title, subtitle, isHomePage = false }) {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -74,10 +73,10 @@ export default function HeroSection({ title, subtitle, isHomePage = false }) {
                             </h1>
                         </div>
 
-                        {/* Subtitle */}
-                        {subtitle && (
+                        {/* Subtitle / Tagline */}
+                        {(subtitle || (isHomePage && heroTagline)) && (
                             <p className="hidden md:block text-sm md:text-base font-bold !text-white mb-8 max-w-6xl mx-auto drop-shadow-[0_4px_6px_rgba(0,0,0,1)] tracking-wide leading-relaxed">
-                                {subtitle}
+                                {subtitle || heroTagline}
                             </p>
                         )}
 
@@ -153,9 +152,6 @@ export default function HeroSection({ title, subtitle, isHomePage = false }) {
                     </p>
                 </div>
             )}
-
-            {/* Latest Updates Ticker - Global (Below Carousel) */}
-            <LatestUpdates />
         </>
     );
 }

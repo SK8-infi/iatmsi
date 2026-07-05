@@ -1,10 +1,10 @@
-# Conference Template Website — Project Standards & Architecture
+# Conference Template Website - Project Standards & Architecture
 
 > **Purpose**: This document defines the architecture, conventions, and data standards for the
 > conference template website. Every AI agent and future tooling (including the planned Tauri
 > no-code editor) MUST follow these rules. The overarching goal is to make this codebase
 > **100% data-driven** so that non-technical users can change ANY visible content **and**
-> **page structure** by editing data files alone — never touching JSX, components, or styles.
+> **page structure** by editing data files alone - never touching JSX, components, or styles.
 
 ---
 
@@ -17,9 +17,9 @@ will eventually allow professors and organizers to:
 2. **Edit all visible content** through a visual WYSIWYG interface.
 3. **Add, remove, and reorder pages** from a page palette.
 4. **Rearrange, add, and remove sections** within any page via drag & drop.
-5. **Edit the navigation bar** — add/remove links, create/modify dropdown menus.
+5. **Edit the navigation bar** - add/remove links, create/modify dropdown menus.
 6. See changes reflected in a live preview rendered from the actual React code.
-7. Commit and push changes back to GitHub — deploying the updated site.
+7. Commit and push changes back to GitHub - deploying the updated site.
 
 The Tauri editor operates on **two layers** of the `src/data/` directory:
 
@@ -31,13 +31,13 @@ The Tauri editor operates on **two layers** of the `src/data/` directory:
 > [!CAUTION]
 > **ZERO hardcoded content in components or pages.** Every user-visible string, URL, image
 > path, list, date, and structured block MUST be sourced from a file in `src/data/`.
-> Components are pure renderers — they receive data via imports or props and display it.
+> Components are pure renderers - they receive data via imports or props and display it.
 > They never define what the content *is*, only how it *looks*.
 
 > [!CAUTION]
 > **ZERO hardcoded page composition.** Which sections appear on a page and in what order
 > is defined in `src/data/pageRegistry.js`. Page components do NOT manually import and
-> arrange section components — they read their composition from the registry and render
+> arrange section components - they read their composition from the registry and render
 > sections dynamically. This enables the Tauri editor to restructure pages by editing data.
 
 ---
@@ -50,28 +50,28 @@ The Tauri editor operates on **two layers** of the `src/data/` directory:
 | Bundler         | Vite                               | 7.x      |
 | Styling         | Tailwind CSS                       | 4.x      |
 | Routing         | React Router DOM                   | 7.x      |
-| Deployment      | Vercel (SPA catch-all rewrite)     | —        |
-| Package Manager | npm                                | —        |
+| Deployment      | Vercel (SPA catch-all rewrite)     | -        |
+| Package Manager | npm                                | -        |
 
 ### Tailwind v4 Rules
 
 - **DO NOT** create a `tailwind.config.js` file. Tailwind v4 uses the CSS-first `@theme`
   directive inside `src/index.css`.
 - All custom color tokens, font families, and shadows are defined in the `@theme` block.
-- If a new token is needed, add it to the `@theme` block — never use raw hex values in JSX.
+- If a new token is needed, add it to the `@theme` block - never use raw hex values in JSX.
 
 ---
 
 ## 3. Project Structure
 
 ```
-├── index.html                  # HTML shell — SEO meta tags sourced from siteConfig
+├── index.html                  # HTML shell - SEO meta tags sourced from siteConfig
 ├── public/
 │   ├── favicon.svg
 │   └── images/                 # Local image assets (prefer over external URLs)
 ├── src/
-│   ├── main.jsx                # React entry point — mounts <App />
-│   ├── App.jsx                 # Dynamic router — reads pageRegistry to generate <Route> entries
+│   ├── main.jsx                # React entry point - mounts <App />
+│   ├── App.jsx                 # Dynamic router - reads pageRegistry to generate <Route> entries
 │   ├── index.css               # Tailwind v4 import, @theme tokens, base styles
 │   ├── App.css                 # App-specific utility classes and animations
 │   │
@@ -80,8 +80,8 @@ The Tauri editor operates on **two layers** of the `src/data/` directory:
 │   │
 │   ├── data/                   # ★ SINGLE SOURCE OF TRUTH FOR ALL CONTENT + STRUCTURE ★
 │   │   ├── siteConfig.js       # Global site configuration (SEO, branding, external links)
-│   │   ├── pageRegistry.js     # ★ PAGE STRUCTURE — defines all pages & their sections ★
-│   │   ├── navigationData.js   # ★ NAV STRUCTURE — full navigation tree (items + dropdowns) ★
+│   │   ├── pageRegistry.js     # ★ PAGE STRUCTURE - defines all pages & their sections ★
+│   │   ├── navigationData.js   # ★ NAV STRUCTURE - full navigation tree (items + dropdowns) ★
 │   │   ├── conferenceData.js   # Conference info, dates, intro, objectives, scope, institute
 │   │   ├── committeeData.js    # All committee member arrays + contact person
 │   │   ├── tracksData.js       # Conference tracks/topics
@@ -120,7 +120,7 @@ The Tauri editor operates on **two layers** of the `src/data/` directory:
 │   │   └── dates/              # Timeline sub-components
 │   │
 │   ├── pages/
-│   │   └── DynamicPage.jsx     # ★ SINGLE page component — renders sections from registry ★
+│   │   └── DynamicPage.jsx     # ★ SINGLE page component - renders sections from registry ★
 │   │
 │   └── utils/
 │       ├── cn.js               # clsx + tailwind-merge utility
@@ -129,12 +129,12 @@ The Tauri editor operates on **two layers** of the `src/data/` directory:
 
 ---
 
-## 4. Data Layer — The Content Contract
+## 4. Data Layer - The Content Contract
 
 ### 4.1 Principles
 
 1. **One data file per content domain.** Do not mix committee data with conference info.
-2. **Named exports only.** Every data file uses named exports — never default exports.
+2. **Named exports only.** Every data file uses named exports - never default exports.
    This lets the Tauri editor enumerate available data blocks.
 3. **Flat, serializable structures.** Data files export plain JS objects, arrays, and strings.
    No functions, no React elements, no imports from other modules.
@@ -142,7 +142,7 @@ The Tauri editor operates on **two layers** of the `src/data/` directory:
    defined in the schemas below. Do not invent new names for the same concept.
 5. **No sentinels.** Don't use magic strings like `"coming_soon"` or `"TBD"` to encode state.
    Use explicit boolean/null fields instead (e.g., `isAvailable: false`, `url: null`).
-6. **Every data file starts with a header comment.** Format: `// <Domain> data — <ConferenceShortTitle>`
+6. **Every data file starts with a header comment.** Format: `// <Domain> data - <ConferenceShortTitle>`
 7. **Images:** Prefer storing images in `public/images/` with relative paths (`/images/hero/1.jpg`).
    External URLs (Google Drive, LinkedIn) are fragile and break when permissions change.
 
@@ -153,10 +153,10 @@ conference from this template, populate these files with the new conference's da
 
 ---
 
-#### `siteConfig.js` — Global Site Configuration
+#### `siteConfig.js` - Global Site Configuration
 
 ```js
-// Site configuration — <ConferenceShortTitle>
+// Site configuration - <ConferenceShortTitle>
 
 export const siteConfig = {
   // SEO & HTML <head>
@@ -203,10 +203,10 @@ export const siteConfig = {
 
 ---
 
-#### `pageRegistry.js` — Page Structure and Composition
+#### `pageRegistry.js` - Page Structure and Composition
 
 ```js
-// Page Registry — <ConferenceShortTitle>
+// Page Registry - <ConferenceShortTitle>
 
 // List of all sections available to be rendered on pages
 export const sectionManifest = [
@@ -234,10 +234,10 @@ export const pageRegistry = [
 
 ---
 
-#### `conferenceData.js` — Conference Information
+#### `conferenceData.js` - Conference Information
 
 ```js
-// Conference data — <ConferenceShortTitle>
+// Conference data - <ConferenceShortTitle>
 
 export const conferenceInfo = {
   shortTitle: 'string',         // e.g. "IATMSI-2027"
@@ -283,10 +283,10 @@ export const importantDates = [
 
 ---
 
-#### `committeeData.js` — Committee Members
+#### `committeeData.js` - Committee Members
 
 ```js
-// Committee data — <ConferenceShortTitle>
+// Committee data - <ConferenceShortTitle>
 
 // Each committee group is a named export array of member objects.
 // The export name determines the group title in the UI.
@@ -315,10 +315,10 @@ export const contactPerson = {
 
 ---
 
-#### `tracksData.js` — Conference Tracks
+#### `tracksData.js` - Conference Tracks
 
 ```js
-// Tracks data — <ConferenceShortTitle>
+// Tracks data - <ConferenceShortTitle>
 
 export const tracks = [
   {
@@ -333,10 +333,10 @@ export const tracks = [
 
 ---
 
-#### `registrationData.js` — Registration Info
+#### `registrationData.js` - Registration Info
 
 ```js
-// Registration data — <ConferenceShortTitle>
+// Registration data - <ConferenceShortTitle>
 
 export const feeStructure = [
   {
@@ -361,10 +361,10 @@ export const registrationProcess = [
 
 ---
 
-#### `heroData.js` — Hero Section Configuration
+#### `heroData.js` - Hero Section Configuration
 
 ```js
-// Hero data — <ConferenceShortTitle>
+// Hero data - <ConferenceShortTitle>
 
 export const heroCarousel = [
   {
@@ -390,10 +390,10 @@ export const heroTagline = 'string';  // Mobile tagline text
 
 ---
 
-#### `navigationData.js` — Navigation Configuration
+#### `navigationData.js` - Navigation Configuration
 
 ```js
-// Navigation data — <ConferenceShortTitle>
+// Navigation data - <ConferenceShortTitle>
 
 // The full hierarchical navigation tree
 export const navigationTree = [
@@ -425,10 +425,10 @@ export const navigationTree = [
 
 ---
 
-#### `submissionData.js` — Paper Submission Content
+#### `submissionData.js` - Paper Submission Content
 
 ```js
-// Submission data — <ConferenceShortTitle>
+// Submission data - <ConferenceShortTitle>
 
 export const submissionGuidelines = ['string'];  // Array of guideline bullet points
 
@@ -457,10 +457,10 @@ export const reviewProcess = {
 
 ---
 
-#### `travelData.js` — Travel, Visa, Venue, Attractions
+#### `travelData.js` - Travel, Visa, Venue, Attractions
 
 ```js
-// Travel data — <ConferenceShortTitle>
+// Travel data - <ConferenceShortTitle>
 
 export const visaInfo = {
   intro: 'string',                  // Intro paragraph
@@ -516,10 +516,10 @@ export const attractions = [
 
 ---
 
-#### `reviewerData.js` — Call for Reviewers
+#### `reviewerData.js` - Call for Reviewers
 
 ```js
-// Reviewer data — <ConferenceShortTitle>
+// Reviewer data - <ConferenceShortTitle>
 
 export const reviewerInfo = {
   intro: 'string',                  // Intro paragraph
@@ -531,10 +531,10 @@ export const reviewerInfo = {
 
 ---
 
-#### `latestUpdates.js` — Marquee/Ticker Updates
+#### `latestUpdates.js` - Marquee/Ticker Updates
 
 ```js
-// Latest updates — <ConferenceShortTitle>
+// Latest updates - <ConferenceShortTitle>
 
 export const latestUpdates = [
   {
@@ -581,21 +581,21 @@ App.jsx
    or complex rendering logic.
 
 2. **Section components are pure renderers.** They receive data via props or import from
-   `src/data/`. They define *layout and styling* — never *content*.
+   `src/data/`. They define *layout and styling* - never *content*.
 
 3. **UI primitives are content-agnostic.** Components in `src/components/ui/` (Button, Card,
    SectionContainer, etc.) must never import from `src/data/`. They receive everything via props.
 
 4. **One canonical component per concept.** Do NOT create duplicate implementations. For
    example, there must be ONE `MemberCard` component used by both `CommitteePage` and
-   `CommitteeGrid` — not two separate implementations.
+   `CommitteeGrid` - not two separate implementations.
 
 5. **All imports from data files use named imports.**
    ```js
    // ✅ Correct
    import { conferenceInfo, importantDates } from '../data/conferenceData';
    
-   // ❌ Wrong — default imports
+   // ❌ Wrong - default imports
    import conferenceData from '../data/conferenceData';
    ```
 
@@ -605,7 +605,7 @@ App.jsx
    import { ROUTES } from '../constants/routes';
    <Link to={ROUTES.IMPORTANT_DATES}>Dates</Link>
    
-   // ❌ Wrong — hardcoded path
+   // ❌ Wrong - hardcoded path
    <Link to="/dates">Dates</Link>
    ```
 
@@ -660,7 +660,7 @@ App.jsx
    never as inline keyframe styles.
 
 5. **Responsive design:** Use Tailwind breakpoints (`sm:`, `md:`, `lg:`, `xl:`).
-   Mobile-first approach — default styles are mobile, add breakpoints for larger screens.
+   Mobile-first approach - default styles are mobile, add breakpoints for larger screens.
 
 ---
 
@@ -706,7 +706,7 @@ This allows the Tauri editor to modify the navigation structure by editing the d
 ### 8.2 Rules
 
 1. **Prefer local images over external URLs.** External URLs (Google Drive, LinkedIn CDN)
-   are fragile — they break when permissions change or CDN URLs expire.
+   are fragile - they break when permissions change or CDN URLs expire.
 
 2. **Every image must have meaningful alt text** defined in the data file, not in the component.
 
@@ -730,13 +730,13 @@ These rules exist specifically to enable the future Tauri no-code editor:
   Only static literals (strings, numbers, booleans, arrays, objects, null).
 
 ```js
-// ✅ Correct — static, parseable
+// ✅ Correct - static, parseable
 export const conferenceInfo = {
   shortTitle: 'IATMSI-2027',
   dates: 'May 20-22, 2027',
 };
 
-// ❌ Wrong — computed value, not statically parseable
+// ❌ Wrong - computed value, not statically parseable
 const YEAR = 2026;
 export const conferenceInfo = {
   shortTitle: `ICGST-${YEAR}`,
@@ -794,8 +794,8 @@ export const conferenceInfo = { ... };
 ### 10.1 Commit Conventions
 
 When the Tauri editor auto-generates commits:
-- Content changes: `content(<domain>): <description>` — e.g., `content(committee): update organizing chairs`
-- Structure changes: `structure(<area>): <description>` — e.g., `structure(nav): add keynote speakers page`
+- Content changes: `content(<domain>): <description>` - e.g., `content(committee): update organizing chairs`
+- Structure changes: `structure(<area>): <description>` - e.g., `structure(nav): add keynote speakers page`
 
 When developers commit:
 - Feature: `feat(<scope>): <description>`
@@ -820,27 +820,27 @@ a new conference:
 > ### Content Hardcoding Violations
 > These pages/components contain hardcoded content that MUST be extracted to data files:
 >
-> 1. **`PaperSubmissionPage.jsx`** — ALL content is hardcoded. Extract to `submissionData.js`.
-> 2. **`TravelVisaPage.jsx`** — ALL visa info is hardcoded. Extract to `travelData.js`.
-> 3. **`VenueDirectionsPage.jsx`** — ALL directions hardcoded. Extract to `travelData.js`.
-> 4. **`ExploreGwaliorPage.jsx`** — Attractions array hardcoded in page file. Extract to `travelData.js`.
-> 5. **`CallForReviewersPage.jsx`** — ALL content hardcoded. Extract to `reviewerData.js`.
-> 6. **`HeroSection.jsx`** — Carousel images array hardcoded. Extract to `heroData.js`.
-> 7. **`IntroSection.jsx`** — Conference info card (dates, venue, mode) duplicated as hardcoded strings instead of using `conferenceInfo`.
-> 8. **`Navbar.jsx`** — Dropdown menu items hardcoded in JSX. Extract to `navigationData.js`.
-> 9. **`Footer.jsx`** — Quick links hardcoded with wrong route paths (e.g., `/dates` instead of `/important-dates`).
-> 10. **`TracksPage.jsx`** — CTA deadline text hardcoded ("June 30, 2026") while data says July 31.
-> 11. **`AboutPage.jsx`** — Focus areas hardcoded as inline objects.
-> 12. **`RegistrationFeeTable.jsx`** — Registration process steps hardcoded.
-> 13. **`index.html`** — SEO meta tags and CMT footer hardcoded.
+> 1. **`PaperSubmissionPage.jsx`** - ALL content is hardcoded. Extract to `submissionData.js`.
+> 2. **`TravelVisaPage.jsx`** - ALL visa info is hardcoded. Extract to `travelData.js`.
+> 3. **`VenueDirectionsPage.jsx`** - ALL directions hardcoded. Extract to `travelData.js`.
+> 4. **`ExploreGwaliorPage.jsx`** - Attractions array hardcoded in page file. Extract to `travelData.js`.
+> 5. **`CallForReviewersPage.jsx`** - ALL content hardcoded. Extract to `reviewerData.js`.
+> 6. **`HeroSection.jsx`** - Carousel images array hardcoded. Extract to `heroData.js`.
+> 7. **`IntroSection.jsx`** - Conference info card (dates, venue, mode) duplicated as hardcoded strings instead of using `conferenceInfo`.
+> 8. **`Navbar.jsx`** - Dropdown menu items hardcoded in JSX. Extract to `navigationData.js`.
+> 9. **`Footer.jsx`** - Quick links hardcoded with wrong route paths (e.g., `/dates` instead of `/important-dates`).
+> 10. **`TracksPage.jsx`** - CTA deadline text hardcoded ("June 30, 2026") while data says July 31.
+> 11. **`AboutPage.jsx`** - Focus areas hardcoded as inline objects.
+> 12. **`RegistrationFeeTable.jsx`** - Registration process steps hardcoded.
+> 13. **`index.html`** - SEO meta tags and CMT footer hardcoded.
 
 > [!WARNING]
 > ### Missing Files & Bugs
 >
-> 1. **`journalsData.js`** — Referenced by `JournalList.jsx` but does not exist. Either create the data file or remove the component import.
-> 2. **`src/utils/cn.js`** — The `cn()` utility (clsx + tailwind-merge) is referenced in project conventions but does not exist. Must be created.
-> 3. **Duplicate `MemberCard`** — Two separate implementations exist in `CommitteeGrid.jsx` and `CommitteePage.jsx`. Consolidate into a single reusable component.
-> 4. **`ScaleWrapper.jsx`** — Imported in `Layout.jsx` but not rendered. Clean up or remove.
+> 1. **`journalsData.js`** - Referenced by `JournalList.jsx` but does not exist. Either create the data file or remove the component import.
+> 2. **`src/utils/cn.js`** - The `cn()` utility (clsx + tailwind-merge) is referenced in project conventions but does not exist. Must be created.
+> 3. **Duplicate `MemberCard`** - Two separate implementations exist in `CommitteeGrid.jsx` and `CommitteePage.jsx`. Consolidate into a single reusable component.
+> 4. **`ScaleWrapper.jsx`** - Imported in `Layout.jsx` but not rendered. Clean up or remove.
 
 ---
 
@@ -851,15 +851,15 @@ To adapt this template for a new conference:
 1. **Fork/clone** the repository.
 2. **Update ALL data files** in `src/data/` with the new conference's information.
 3. **Replace images** in `public/images/` with new conference assets.
-4. **Update `index.html`** — title, meta tags (or better, make this data-driven via `siteConfig.js`).
-5. **Update `package.json`** — `name` field.
+4. **Update `index.html`** - title, meta tags (or better, make this data-driven via `siteConfig.js`).
+5. **Update `package.json`** - `name` field.
 6. **Update theme colors** in `src/index.css` `@theme` block if the new conference has
    different branding.
 7. **Run `npm run dev`** to verify everything renders correctly.
 8. **Run `npm run build`** to validate production build.
 9. **Deploy** to Vercel, Netlify, or any static hosting.
 
-No component files should need modification for a simple conference change — if they do,
+No component files should need modification for a simple conference change - if they do,
 it means the data abstraction is incomplete and should be fixed.
 
 ---

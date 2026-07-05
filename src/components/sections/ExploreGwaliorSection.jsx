@@ -11,7 +11,7 @@ export default function ExploreGwaliorSection() {
                     {/* Intro */}
                     <div className="prose prose max-w-none text-slate-600 text-center">
                         <p className="text-base leading-relaxed max-w-3xl mx-auto">
-                            Gwalior, known as the <strong className="text-blue-700">City of Music</strong> and one of the most historic cities in central India, offers conference attendees a chance to explore centuries of royal heritage, stunning architecture, and vibrant culture — all within easy reach of the ABV-IIITM campus.
+                            Gwalior, known as the <strong className="text-blue-700">City of Music</strong> and one of the most historic cities in central India, offers conference attendees a chance to explore centuries of royal heritage, stunning architecture, and vibrant culture - all within easy reach of the ABV-IIITM campus.
                         </p>
                     </div>
 

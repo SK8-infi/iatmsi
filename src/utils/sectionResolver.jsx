@@ -14,6 +14,7 @@ import VenueDirectionsSection from '../components/sections/VenueDirectionsSectio
 import HeroSection from '../components/sections/HeroSection';
 import IntroSection from '../components/sections/IntroSection';
 import AboutInstitute from '../components/sections/AboutInstitute';
+import PlaceholderSection from '../components/sections/PlaceholderSection';
 
 // Temporary inline component for Divider
 function Divider() {
@@ -42,4 +43,5 @@ export const sectionResolver = {
     submissionCtaSection: SubmissionCtaSection,
     travelVisaSection: TravelVisaSection,
     venueDirectionsSection: VenueDirectionsSection,
+    placeholder: PlaceholderSection,
 };

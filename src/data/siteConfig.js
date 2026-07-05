@@ -1,4 +1,4 @@
-// Site configuration — IATMSI-2027
+// Site configuration - IATMSI-2027
 
 export const siteConfig = {
   // SEO & HTML <head>

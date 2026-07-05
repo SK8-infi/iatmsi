@@ -1,4 +1,4 @@
-// Submission data — IATMSI-2027
+// Submission data - IATMSI-2027
 
 export const submissionGuidelines = [
     '**Page limit:** Maximum of **6 pages** (10-point, IEEE two-column), including figures, tables, and references.',

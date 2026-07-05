@@ -1,4 +1,4 @@
-// Travel data — IATMSI-2027
+// Travel data - IATMSI-2027
 
 export const visaInfo = {
   intro: 'We look forward to welcoming you to **IATMSI-2027** at ABV-IIITM, Gwalior, India! To ensure a smooth visa application process, please follow the instructions below.',
@@ -43,7 +43,7 @@ export const visaInfo = {
 };
 
 export const venueInfo = {
-  description: 'ABV-Indian Institute of Information Technology & Management\nMorena Link Road, Gwalior, Madhya Pradesh — 474015, India',
+  description: 'ABV-Indian Institute of Information Technology & Management\nMorena Link Road, Gwalior, Madhya Pradesh - 474015, India',
   directionsFromAirport: {
     name: 'Rajmata Vijaya Raje Scindia Airport (GWL)',
     distance: '~10 km',
@@ -52,7 +52,7 @@ export const venueInfo = {
         'The airport is well-connected to major Indian cities including Delhi, Mumbai, and Bengaluru.',
         'Pre-paid taxis and auto-rickshaws are available at the airport exit.',
         'App-based cabs (Ola, Uber) can be booked directly from the terminal.',
-        'Head towards Morena Link Road — the institute campus is located along this road.',
+        'Head towards Morena Link Road - the institute campus is located along this road.',
     ],
   },
   directionsFromRailway: {
@@ -99,7 +99,7 @@ export const attractions = [
         id: 'gwalior-fort',
         name: 'Gwalior Fort',
         tagline: 'The Pearl Amongst Fortresses',
-        description: 'One of India\'s most imposing hill forts, Gwalior Fort sits atop a rocky massif rising 100 meters above the city. Its massive walls enclose palaces, temples, and water tanks. The Man Mandir Palace, adorned with vibrant ceramic tiles, and the ancient Chaturbhuj Temple — home to the second oldest recorded use of the number zero — are among its highlights.',
+        description: 'One of India\'s most imposing hill forts, Gwalior Fort sits atop a rocky massif rising 100 meters above the city. Its massive walls enclose palaces, temples, and water tanks. The Man Mandir Palace, adorned with vibrant ceramic tiles, and the ancient Chaturbhuj Temple - home to the second oldest recorded use of the number zero - are among its highlights.',
         highlight: 'Must-visit • UNESCO Tentative List',
         image: 'https://www.indiaholidaymall.com/images/blog/Gwalior-Fort.jpg',
     },
@@ -137,9 +137,9 @@ export const attractions = [
     },
     {
         id: 'gujari-mahal',
-        name: 'Gujari Mahal — Archaeological Museum',
+        name: 'Gujari Mahal - Archaeological Museum',
         tagline: 'Treasures from the Heart of India',
-        description: 'Originally built by Raja Man Singh Tomar for his Gujar queen Mrignayani, this 15th-century palace now serves as the State Archaeological Museum. Its collection includes rare sculptures, inscriptions, and the famous Shalabhanjika — a graceful tree nymph sculpture that is one of the finest examples of Indian sculptural art.',
+        description: 'Originally built by Raja Man Singh Tomar for his Gujar queen Mrignayani, this 15th-century palace now serves as the State Archaeological Museum. Its collection includes rare sculptures, inscriptions, and the famous Shalabhanjika - a graceful tree nymph sculpture that is one of the finest examples of Indian sculptural art.',
         highlight: 'At the base of Gwalior Fort • Entry fee applies',
         image: 'https://www.madhyapradeshdmc.com/images/gujari-mahal-01.webp',
     },

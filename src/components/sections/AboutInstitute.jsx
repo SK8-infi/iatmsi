@@ -68,7 +68,7 @@ export default function AboutInstitute() {
                         <div className="order-2 lg:order-1 space-y-6">
                             <div className="space-y-2">
                                 <h2 className="text-base sm:text-2xl md:text-3xl font-bold text-neutral-900">
-                                    Center of Excellence — Sustainable Technology & Green Mobility
+                                    Center of Excellence - Sustainable Technology & Green Mobility
                                 </h2>
                                 <div className="w-16 sm:w-20 h-1.5 bg-primary-600 rounded-full" />
                             </div>

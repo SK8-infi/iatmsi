@@ -1,5 +1,7 @@
 import { pageRegistry } from '../data/pageRegistry';
 import { sectionResolver } from '../utils/sectionResolver';
+import NavigationMenu from '../components/layout/NavigationMenu';
+import LatestUpdates from '../components/sections/LatestUpdates';
 
 export default function DynamicPage({ pageId }) {
     const pageConfig = pageRegistry.find(p => p.id === pageId);
@@ -8,18 +10,37 @@ export default function DynamicPage({ pageId }) {
         return <div className="p-8 text-center text-red-500 font-bold">Error: Page "{pageId}" not found in registry.</div>;
     }
 
+    const heroSection = pageConfig.sections.find(s => s.sectionId === 'hero');
+    const otherSections = pageConfig.sections.filter(s => s.sectionId !== 'hero');
+
     return (
         <>
-            {pageConfig.sections.map((section, index) => {
-                const Component = sectionResolver[section.sectionId];
-                
-                if (!Component) {
-                    console.warn(`Component not found for sectionId: ${section.sectionId}`);
-                    return null;
-                }
+            {heroSection && (
+                <SectionRenderer 
+                    key="hero" 
+                    section={heroSection} 
+                />
+            )}
+            
+            <LatestUpdates />
+            <NavigationMenu />
 
-                return <Component key={`${section.sectionId}-${index}`} {...section.props} />;
-            })}
+            {otherSections.map((section, index) => (
+                <SectionRenderer 
+                    key={`${section.sectionId}-${index}`} 
+                    section={section} 
+                />
+            ))}
         </>
     );
+}
+
+// Helper to render a section
+function SectionRenderer({ section }) {
+    const Component = sectionResolver[section.sectionId];
+    if (!Component) {
+        console.warn(`Component not found for sectionId: ${section.sectionId}`);
+        return null;
+    }
+    return <Component {...section.props} />;
 }

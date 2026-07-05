@@ -90,7 +90,7 @@ export default function TravelVisaSection() {
                             {visaInfo.invitationLetterInfo}
                         </p>
                         <a
-                            href="mailto:iatmsi2027@iiitm.ac.in?subject=Visa Invitation Letter Request — IATMSI-2027"
+                            href="mailto:iatmsi2027@iiitm.ac.in?subject=Visa Invitation Letter Request - IATMSI-2027"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-[#002855] !text-white font-semibold rounded-lg hover:bg-[#001a3a] transition-colors shadow-md shadow-blue-200"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -20,7 +20,7 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100">
+            <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 flex flex-col">
                 {/* Top Branding Bar - College Branding */}
                 <a
                     href={siteConfig.branding.instituteUrl}
@@ -57,93 +57,55 @@ export default function Navbar() {
                     </div>
                 </a>
 
-                {/* Main navbar */}
-                <nav className="border-t border-gray-100">
+                {/* Main Branding Row (Logo + Submit) & Navigation */}
+                <div className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="relative flex items-center justify-between h-12">
-                            {/* Conference Acronym */}
-                            <div className="flex-shrink-0 flex items-center gap-2 mr-4 lg:mr-8">
+                        {/* Unified Row: Logo, Navigation, Submit */}
+                        <div className="relative flex flex-col lg:flex-row items-center justify-between py-2 lg:py-4 gap-y-4">
+                            {/* Conference Acronym (Left) */}
+                            <div className="flex-shrink-0 flex items-center gap-2 w-full lg:w-auto justify-start">
                                 <Link to={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                                    <div className="bg-white rounded-full p-[3px] w-9 h-9 flex items-center justify-center shadow-lg">
+                                    <div className="bg-white rounded-full p-[3px] w-10 h-10 flex items-center justify-center shadow-lg border border-gray-100">
                                         <img
                                             src={siteConfig.branding.conferenceLogo}
                                             alt="Conference Logo"
                                             className="w-full h-full object-contain rounded-full"
                                         />
                                     </div>
-                                    <span className="font-bold text-primary-900 text-base md:text-base tracking-tight whitespace-nowrap pt-1 lg:pt-0">
+                                    <span className="font-bold text-primary-900 text-lg md:text-xl tracking-tight whitespace-nowrap pt-1 lg:pt-0">
                                         {siteConfig.seo.title.split(' |')[0]}
                                     </span>
                                 </Link>
+                                
+                                {/* Mobile menu button (Right-aligned on mobile) */}
+                                <button
+                                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                    className="lg:hidden p-2 text-gray-500 ml-auto focus:outline-none"
+                                >
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        {isMenuOpen ? (
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                        ) : (
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                        )}
+                                    </svg>
+                                </button>
                             </div>
 
-                            {/* Desktop Navigation */}
-                            <div className="hidden lg:flex items-center space-x-4">
-                                {navigationTree.map((item) => (
-                                    item.type === 'link' ? (
-                                        <NavLink
-                                            key={item.id}
-                                            to={item.path}
-                                            className={({ isActive }) =>
-                                                `px-1 py-1 xl:px-2 text-[10px] xl:text-xs font-medium tracking-wide uppercase transition-colors border-b-2
-                                                ${isActive ? 'text-primary-900 border-primary-900 font-bold' : 'text-slate-700 border-transparent hover:text-primary-700 hover:border-primary-700/30'}`
-                                            }
-                                        >
-                                            {item.label}
-                                        </NavLink>
-                                    ) : (
-                                        <div key={item.id} className="relative group flex">
-                                            <button className={`flex items-center px-1 py-1 xl:px-2 text-[10px] xl:text-xs font-medium tracking-wide uppercase transition-colors border-b-2 ${isDropdownActive(item) ? 'text-primary-900 border-primary-900 font-bold' : 'text-slate-700 border-transparent hover:text-primary-700 hover:border-primary-700/30'}`}>
-                                                {item.label}
-                                                <svg className="w-3 h-3 ml-0.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            </button>
-                                            <div className="absolute top-full left-0 w-full h-2 bg-transparent"></div>
-                                            <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left z-50 border border-slate-100 ring-1 ring-black ring-opacity-5">
-                                                <div className="py-1">
-                                                    {item.items.map((subItem) => (
-                                                        <Link
-                                                            key={subItem.id}
-                                                            to={subItem.path}
-                                                            className="block px-4 py-2 text-sm text-slate-700 hover:bg-primary-50 hover:text-primary-700"
-                                                        >
-                                                            {subItem.label}
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                ))}
-
-                                {/* Submit Button */}
+                            {/* Submit Button (Right, Desktop Only) */}
+                            <div className="hidden lg:block flex-shrink-0">
                                 <a
                                     href={siteConfig.externalLinks.submissionPortal.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium !text-white bg-primary-900 hover:bg-primary-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-900 transition-all transform hover:scale-105"
+                                    className="inline-flex items-center justify-center px-5 py-2 border border-transparent rounded-md shadow-sm text-[13px] font-bold !text-white bg-primary-900 hover:bg-primary-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-900 transition-all transform hover:scale-105"
                                 >
                                     Submit Paper
                                 </a>
                             </div>
-
-                            {/* Mobile menu button */}
-                            <button
-                                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="lg:hidden p-2 text-gray-500 ml-auto focus:outline-none"
-                            >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    {isMenuOpen ? (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    ) : (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                    )}
-                                </svg>
-                            </button>
                         </div>
                     </div>
-                </nav>
+                </div>
             </header>
 
             {/* Mobile Navigation Drawer */}

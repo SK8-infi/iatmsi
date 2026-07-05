@@ -1,4 +1,4 @@
-// Reviewer data — IATMSI-2027
+// Reviewer data - IATMSI-2027
 
 export const reviewerInfo = {
   intro: 'Join our esteemed Reviewer Panel for IATMSI-2027.',
