@@ -61,7 +61,7 @@ export default function Navbar() {
                 <div className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         {/* Unified Row: Logo, Navigation, Submit */}
-                        <div className="relative flex flex-col lg:flex-row items-center justify-between py-2 lg:py-4 gap-y-4">
+                        <div className="relative flex flex-col lg:flex-row items-center justify-between py-2 lg:py-2 gap-y-2">
                             {/* Conference Acronym (Left) */}
                             <div className="flex-shrink-0 flex items-center gap-2 w-full lg:w-auto justify-start">
                                 <Link to={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-80 transition-opacity">

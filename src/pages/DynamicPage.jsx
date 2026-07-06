@@ -2,6 +2,7 @@ import { pageRegistry } from '../data/pageRegistry';
 import { sectionResolver } from '../utils/sectionResolver';
 import NavigationMenu from '../components/layout/NavigationMenu';
 import LatestUpdates from '../components/sections/LatestUpdates';
+import Navbar from '../components/layout/Navbar';
 
 export default function DynamicPage({ pageId }) {
     const pageConfig = pageRegistry.find(p => p.id === pageId);
@@ -15,12 +16,17 @@ export default function DynamicPage({ pageId }) {
 
     return (
         <>
-            {heroSection && (
-                <SectionRenderer 
-                    key="hero" 
-                    section={heroSection} 
-                />
-            )}
+            <div className="relative">
+                <div className="sticky top-0 z-50">
+                    <Navbar />
+                </div>
+                {heroSection && (
+                    <SectionRenderer 
+                        key="hero" 
+                        section={heroSection} 
+                    />
+                )}
+            </div>
             
             <LatestUpdates />
             <NavigationMenu />
