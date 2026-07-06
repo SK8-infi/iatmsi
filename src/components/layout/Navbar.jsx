@@ -61,11 +61,11 @@ export default function Navbar() {
                 <div className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         {/* Unified Row: Logo, Navigation, Submit */}
-                        <div className="relative flex flex-col lg:flex-row items-center justify-between py-2 lg:py-2 gap-y-2">
+                        <div className="relative flex flex-col lg:flex-row items-center justify-between py-1 lg:py-1 gap-y-1">
                             {/* Conference Acronym (Left) */}
                             <div className="flex-shrink-0 flex items-center gap-2 w-full lg:w-auto justify-start">
                                 <Link to={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                                    <div className="bg-white rounded-full p-[3px] w-10 h-10 flex items-center justify-center shadow-lg border border-gray-100">
+                                    <div className="bg-white rounded-full p-[2px] w-8 h-8 flex items-center justify-center shadow-lg border border-gray-100">
                                         <img
                                             src={siteConfig.branding.conferenceLogo}
                                             alt="Conference Logo"
@@ -98,7 +98,7 @@ export default function Navbar() {
                                     href={siteConfig.externalLinks.submissionPortal.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center px-5 py-2 border border-transparent rounded-md shadow-sm text-[13px] font-bold !text-white bg-primary-900 hover:bg-primary-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-900 transition-all transform hover:scale-105"
+                                    className="inline-flex items-center justify-center px-4 py-1.5 border border-transparent rounded-md shadow-sm text-[12px] font-bold !text-white bg-primary-900 hover:bg-primary-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-900 transition-all transform hover:scale-105"
                                 >
                                     Submit Paper
                                 </a>
