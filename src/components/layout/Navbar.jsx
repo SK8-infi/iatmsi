@@ -23,7 +23,7 @@ export default function Navbar() {
             <header className="relative z-50 w-full pt-4 px-4 sm:px-6 lg:px-8 bg-transparent pointer-events-none">
                 <div className="max-w-7xl mx-auto bg-white/80 backdrop-blur-xl border border-white/50 shadow-2xl rounded-2xl w-full pointer-events-auto transition-all duration-300">
                     {/* Unified Row: IATMSI Logo, Partner Logos, Submit */}
-                    <div className="relative flex items-center justify-between py-2 px-4 lg:py-2 gap-x-2 lg:gap-x-4">
+                    <div className="relative flex items-center justify-between py-1.5 px-3 lg:px-4 lg:py-1.5 gap-x-2 lg:gap-x-4">
                         
                         {/* Conference Logo (Left) */}
                         <div className="flex-shrink-0 flex items-center">
@@ -31,7 +31,7 @@ export default function Navbar() {
                                 <img
                                     src={siteConfig.branding.conferenceLogo}
                                     alt="IATMSI 2027 Logo"
-                                    className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+                                    className="h-14 sm:h-16 lg:h-20 w-auto object-contain scale-110 origin-left"
                                 />
                             </Link>
                         </div>
@@ -43,7 +43,7 @@ export default function Navbar() {
                                     <img 
                                         src={logo.url} 
                                         alt={logo.alt} 
-                                        className="h-6 sm:h-8 lg:h-10 w-auto object-contain" 
+                                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain scale-110" 
                                     />
                                     {index < siteConfig.branding.partnerLogos.length - 1 && (
                                         <div className="hidden sm:block w-px h-5 sm:h-6 bg-gray-300"></div>
