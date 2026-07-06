@@ -31,7 +31,7 @@ export default function Navbar() {
                                 <img
                                     src={siteConfig.branding.conferenceLogo}
                                     alt="IATMSI 2027 Logo"
-                                    className="h-14 sm:h-16 lg:h-20 w-auto object-contain scale-110 origin-left"
+                                    className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain"
                                 />
                             </Link>
                         </div>
@@ -43,7 +43,7 @@ export default function Navbar() {
                                     <img 
                                         src={logo.url} 
                                         alt={logo.alt} 
-                                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain scale-110" 
+                                        className="h-5 sm:h-7 md:h-8 lg:h-10 w-auto object-contain" 
                                     />
                                     {index < siteConfig.branding.partnerLogos.length - 1 && (
                                         <div className="hidden sm:block w-px h-5 sm:h-6 bg-gray-300"></div>
