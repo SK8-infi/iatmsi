@@ -20,10 +20,10 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="relative z-50 w-full bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 flex flex-col">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <header className="relative z-50 w-full pt-4 px-4 sm:px-6 lg:px-8 bg-transparent pointer-events-none">
+                <div className="max-w-7xl mx-auto bg-white/80 backdrop-blur-xl border border-white/50 shadow-2xl rounded-2xl w-full pointer-events-auto transition-all duration-300">
                     {/* Unified Row: IATMSI Logo, Partner Logos, Submit */}
-                    <div className="relative flex items-center justify-between py-2 lg:py-2 gap-x-2 lg:gap-x-4">
+                    <div className="relative flex items-center justify-between py-2 px-4 lg:py-2 gap-x-2 lg:gap-x-4">
                         
                         {/* Conference Logo (Left) */}
                         <div className="flex-shrink-0 flex items-center">
