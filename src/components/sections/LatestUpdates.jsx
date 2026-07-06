@@ -11,44 +11,51 @@ export default function LatestUpdates() {
     if (!updates || updates.length === 0) return null;
 
     return (
-        <div className="w-full bg-[#002855] text-white border-t border-blue-800 relative z-20 overflow-hidden flex h-12 sm:h-14 shadow-md">
-            {/* Label */}
-            <div className="bg-blue-600 px-4 sm:px-8 flex items-center justify-center relative z-20 shrink-0 shadow-lg">
-                <span className="font-bold text-sm sm:text-base uppercase tracking-wider flex items-center gap-2">
-                    <svg className="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-full bg-slate-950 border-y border-white/5 relative z-20 overflow-hidden flex h-12 sm:h-14 shadow-xl group">
+            
+            {/* Left fade mask to smoothly hide text as it scrolls behind the label */}
+            <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-64 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-10 pointer-events-none"></div>
+
+            {/* Right fade mask */}
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
+
+            {/* Modern Floating Label */}
+            <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 flex items-center">
+                <div className="bg-blue-500/10 backdrop-blur-md border border-blue-500/20 text-blue-300 px-3 sm:px-5 py-1.5 rounded-full flex items-center gap-2 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+                    <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                     </svg>
-                    <span className="hidden sm:inline">Latest</span> Updates
-                </span>
-                {/* Arrow */}
-                <div className="absolute top-0 right-0 transform translate-x-full h-full w-0 border-t-[24px] sm:border-t-[28px] border-t-transparent border-l-[12px] sm:border-l-[20px] border-l-blue-600 border-b-[24px] sm:border-b-[28px] border-b-transparent"></div>
+                    <span className="font-bold text-xs sm:text-sm uppercase tracking-widest">
+                        <span className="hidden sm:inline">Latest</span> Updates
+                    </span>
+                </div>
             </div>
 
             {/* Scrolling Content */}
-            <div className="flex-1 flex items-center overflow-hidden relative">
-                <div className="animate-marquee whitespace-nowrap flex items-center gap-12 px-6">
+            <div className="flex-1 flex items-center overflow-hidden">
+                <div className="animate-marquee group-hover:[animation-play-state:paused] whitespace-nowrap flex items-center gap-12 sm:gap-20 px-6 pl-56 sm:pl-72">
                     {/* Duplicate list for seamless loop */}
-                    {[...updates, ...updates].map((update, index) => (
+                    {[...updates, ...updates, ...updates].map((update, index) => (
                         <div key={index} className="flex items-center gap-3 sm:gap-4 text-sm sm:text-base">
-                            <span className="w-2 h-2 rounded-full bg-blue-400 shrink-0"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500/40 shrink-0"></span>
 
                             {update.important && (
-                                <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded shadow-sm animate-pulse-slow">
+                                <span className="bg-red-500/20 text-red-400 border border-red-500/30 text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full shadow-sm animate-pulse-slow">
                                     NEW
                                 </span>
                             )}
 
-                            <span className="opacity-95 font-medium tracking-wide">{update.text}</span>
+                            <span className="text-slate-300 font-medium tracking-wide">{update.text}</span>
 
                             {update.link && (
                                 <a
                                     href={update.link}
-                                    className="text-blue-200 hover:text-white underline decoration-blue-400 hover:decoration-white underline-offset-2 transition-colors font-semibold flex items-center gap-1"
+                                    className="text-blue-400 hover:text-blue-300 underline decoration-blue-500/30 hover:decoration-blue-400 underline-offset-4 transition-colors font-medium flex items-center gap-1.5"
                                     target={update.link.startsWith('http') ? '_blank' : '_self'}
                                     rel={update.link.startsWith('http') ? 'noopener noreferrer' : ''}
                                 >
-                                    Click here
-                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    Read more
+                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                     </svg>
                                 </a>
