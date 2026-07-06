@@ -52,7 +52,7 @@ export default function HeroSection({ title, subtitle, isHomePage = false }) {
                 <div className={`absolute inset-0 ${isHomePage ? 'bg-black/60' : 'bg-black/80'}`} />
 
                 {/* Content Overlay */}
-                <div className={`absolute inset-0 flex items-center justify-center px-4 ${isHomePage ? 'pb-12' : 'pt-20'}`}>
+                <div className={`absolute inset-0 flex items-center justify-center px-4 pt-24 pb-8 md:pt-32`}>
                     <div className="text-center text-white px-4 max-w-7xl w-full">
                         {/* Welcome Line */}
                         <p className="text-white text-xl md:text-2xl font-bold tracking-widest uppercase mb-3 drop-shadow-lg">
