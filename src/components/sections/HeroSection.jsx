@@ -65,9 +65,9 @@ export default function HeroSection({ title, subtitle, isHomePage = false }) {
                         </p>
 
                         {/* Main Title */}
-                        <div className="flex flex-col gap-4 mb-8">
+                        <div className="flex flex-col gap-4 mb-6">
                             <h1 className="text-white font-light leading-tight drop-shadow-lg">
-                                <span className="block text-2xl md:text-3xl lg:text-4xl font-black mb-2 leading-tight text-white drop-shadow-xl uppercase tracking-widest">
+                                <span className="block text-lg md:text-xl lg:text-2xl font-black mb-2 leading-snug text-white drop-shadow-xl uppercase tracking-widest">
                                     {title || conferenceInfo.fullTitle}
                                 </span>
                             </h1>
