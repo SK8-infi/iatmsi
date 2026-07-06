@@ -82,16 +82,16 @@ export default function HeroSection({ title, subtitle, isHomePage = false }) {
 
                         {/* CTA Buttons - Home Page only */}
                         {isHomePage && (
-                            <div className="flex flex-row gap-3 justify-center mt-4 md:mt-6">
+                            <div className="flex flex-row gap-4 justify-center mt-6 md:mt-8">
                                 <Link
                                     to={ROUTES[heroCta.primary.route]}
-                                    className="text-primary-900 bg-white inline-flex items-center justify-center px-4 py-2 md:px-8 md:py-3 text-xs md:text-base font-bold rounded shadow-lg hover:bg-neutral-100 transition-all hover:-translate-y-0.5"
+                                    className="text-primary-900 bg-white inline-flex items-center justify-center px-6 py-2.5 md:px-10 md:py-3.5 text-sm md:text-base font-bold rounded-full shadow-2xl hover:bg-gray-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(255,255,255,0.3)]"
                                 >
                                     {heroCta.primary.label}
                                 </Link>
                                 <Link
                                     to={ROUTES[heroCta.secondary.route]}
-                                    className="text-white border-white inline-flex items-center justify-center px-4 py-2 md:px-8 md:py-3 border-2 text-xs md:text-base font-bold rounded hover:bg-white/10 transition-all hover:-translate-y-0.5"
+                                    className="text-white bg-white/10 backdrop-blur-md border border-white/40 inline-flex items-center justify-center px-6 py-2.5 md:px-10 md:py-3.5 text-sm md:text-base font-bold rounded-full shadow-xl hover:bg-white/20 hover:border-white/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
                                 >
                                     {heroCta.secondary.label}
                                 </Link>
