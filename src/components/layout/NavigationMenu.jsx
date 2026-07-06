@@ -10,7 +10,7 @@ export default function NavigationMenu() {
     };
 
     return (
-        <div className="bg-gray-100/95 backdrop-blur-md shadow-sm border-b border-gray-200 z-50 sticky top-0">
+        <div className="bg-gray-100/95 backdrop-blur-md shadow-sm border-b border-gray-200 z-40 relative">
             <nav className="hidden lg:flex flex-1 flex-wrap justify-center items-center gap-x-6 gap-y-4 px-4 xl:px-8 py-4">
                 {navigationTree.map((item) => (
                     item.type === 'link' ? (
