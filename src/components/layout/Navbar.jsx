@@ -43,7 +43,7 @@ export default function Navbar() {
                                     <img 
                                         src={logo.url} 
                                         alt={logo.alt} 
-                                        className="h-5 sm:h-7 md:h-8 lg:h-10 w-auto object-contain" 
+                                        className="h-6 sm:h-8 md:h-9 lg:h-10 w-auto object-contain" 
                                     />
                                     {index < siteConfig.branding.partnerLogos.length - 1 && (
                                         <div className="hidden sm:block w-px h-5 sm:h-6 bg-gray-300"></div>
