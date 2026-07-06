@@ -22,10 +22,35 @@ export default function IntroSection() {
                         <div className="w-16 h-1 bg-primary-600 rounded-full mt-4" />
                     </div>
 
-                    <div className="prose text-neutral-600 text-justify max-w-none">
-                        <p className="leading-relaxed text-sm sm:text-base text-neutral-700">
-                            {homeIntroContent.mainIntro}
-                        </p>
+                    <div className="prose text-neutral-600 text-justify max-w-none space-y-4">
+                        {homeIntroContent.paragraphs?.map((p, i) => (
+                            <p key={i} className="leading-relaxed text-sm sm:text-base text-neutral-700">
+                                {p}
+                            </p>
+                        ))}
+
+                        {homeIntroContent.tracks && homeIntroContent.tracks.length > 0 && (
+                            <div className="py-4">
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-0 list-none m-0">
+                                    {homeIntroContent.tracks.map((track, i) => (
+                                        <li key={i} className="flex items-start gap-3 bg-primary-50/50 p-3 rounded-lg border border-primary-100 hover:bg-primary-50 transition-colors">
+                                            <div className="w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <svg className="w-3 h-3 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-sm font-medium text-slate-700 leading-snug">{track}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {homeIntroContent.closingParagraph && (
+                            <p className="leading-relaxed text-sm sm:text-base text-neutral-700">
+                                {homeIntroContent.closingParagraph}
+                            </p>
+                        )}
                     </div>
 
                     <div className="pt-4 flex flex-wrap gap-4 justify-start">
