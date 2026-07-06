@@ -16,28 +16,38 @@ export default function DynamicPage({ pageId }) {
 
     return (
         <>
-            <div className="relative">
-                <div className={`z-50 w-full ${heroSection ? 'h-0 overflow-visible' : ''} fixed md:relative top-0`}>
-                    <Navbar />
-                </div>
-                {!heroSection && <div className="h-20 md:hidden"></div>}
-                {heroSection && (
-                    <SectionRenderer 
-                        key="hero" 
-                        section={heroSection} 
-                    />
+            {/* Unified Sticky Header for Non-Hero Pages */}
+            <div className={`z-50 w-full flex flex-col ${heroSection ? 'fixed md:sticky top-0 h-0 overflow-visible' : 'sticky top-0 bg-gray-100 shadow-sm'}`}>
+                <Navbar />
+                
+                {!heroSection && (
+                    <div className="flex flex-col w-full shadow-md">
+                        <LatestUpdates />
+                        <NavigationMenu />
+                    </div>
                 )}
             </div>
-            
-            <LatestUpdates />
-            <NavigationMenu />
 
-            {otherSections.map((section, index) => (
-                <SectionRenderer 
-                    key={`${section.sectionId}-${index}`} 
-                    section={section} 
-                />
-            ))}
+            {/* Hero Section and its below-the-fold components */}
+            {heroSection && (
+                <div className="relative">
+                    <SectionRenderer key="hero" section={heroSection} />
+                    <LatestUpdates />
+                    <div className="sticky top-0 z-40">
+                        <NavigationMenu />
+                    </div>
+                </div>
+            )}
+
+            {/* Rest of the page sections */}
+            <div className="flex flex-col relative z-10">
+                {otherSections.map((section, index) => (
+                    <SectionRenderer 
+                        key={`${section.sectionId}-${index}`} 
+                        section={section} 
+                    />
+                ))}
+            </div>
         </>
     );
 }
