@@ -17,8 +17,6 @@ export const pageRegistry = [
         sections: [
             { sectionId: 'hero', props: { isHomePage: true } },
             { sectionId: 'intro', props: {} },
-            { sectionId: 'divider', props: {} },
-            { sectionId: 'aboutInstitute', props: {} },
         ]
     },
 
