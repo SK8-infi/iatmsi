@@ -11,9 +11,9 @@ export default function LatestUpdates() {
     if (!updates || updates.length === 0) return null;
 
     return (
-        <div className="w-full bg-primary-50 border-b border-primary-100 relative z-20 flex h-10 sm:h-12 overflow-hidden group">
+        <div className="w-full bg-white border-b border-neutral-200 relative z-20 flex h-10 sm:h-12 overflow-hidden group shadow-sm">
             {/* Flat Label Block */}
-            <div className="bg-primary-900 px-4 sm:px-6 flex items-center justify-center z-30 shrink-0 border-r border-primary-800">
+            <div className="bg-primary-900 px-4 sm:px-6 flex items-center justify-center z-30 shrink-0 border-r border-primary-950">
                 <span className="font-bold tracking-wider uppercase flex items-center gap-2.5 text-xs sm:text-sm text-white">
                     <span className="w-2 h-2 bg-primary-400 rounded-full"></span>
                     <span className="hidden sm:inline">Latest</span> Updates
@@ -21,7 +21,7 @@ export default function LatestUpdates() {
             </div>
 
             {/* Scrolling Content */}
-            <div className="flex-1 flex items-center bg-primary-50 text-primary-950">
+            <div className="flex-1 flex items-center bg-white text-slate-800">
                 <div className="animate-marquee group-hover:[animation-play-state:paused] whitespace-nowrap flex items-center gap-8 pl-6">
                     {/* Duplicate list for seamless loop */}
                     {[...updates, ...updates, ...updates].map((update, index) => (
@@ -46,7 +46,7 @@ export default function LatestUpdates() {
                             )}
                             
                             {/* Simple Separator */}
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary-300 ml-6 sm:ml-8"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-slate-300 ml-6 sm:ml-8"></span>
                         </div>
                     ))}
                 </div>
