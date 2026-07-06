@@ -12,7 +12,12 @@ export const siteConfig = {
 
   // Branding
   branding: {
-    conferenceLogo: 'https://lh3.googleusercontent.com/d/1jeOsrAKIcerD_kLKSwFJ6JAWT_OfBEgG',
+    conferenceLogo: 'https://lh3.googleusercontent.com/d/1dt8Et6kaR5nAmXBTq286s2AlE3AwQ2oH',
+    partnerLogos: [
+      { id: 'ieee-mp', url: 'https://lh3.googleusercontent.com/d/1V_wpkVHk196JZwxUX68JBYLceWWm-B4A', alt: 'IEEE Madhya Pradesh Section' },
+      { id: 'abv-iiitm', url: 'https://lh3.googleusercontent.com/d/1pzDFkI_kSgO-rRu5D2T2dhzR_LJO8o04', alt: 'ABV-IIITM IEEE Student Branch' },
+      { id: 'ieee-nepal', url: 'https://lh3.googleusercontent.com/d/1VM2PNLLvcSb2w2slRYbumIVUM1a1jmJ5', alt: 'IEEE Nepal Section' }
+    ],
     instituteLogo: 'https://lh3.googleusercontent.com/d/1LNtqXOXfvsyYZaclWSc2QM-yzpxov1vw',
     instituteName: 'Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior',
     instituteUrl: 'https://iiitm.ac.in',

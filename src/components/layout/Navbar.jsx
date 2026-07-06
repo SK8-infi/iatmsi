@@ -20,80 +20,42 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="relative z-50 w-full bg-gray-100/90 backdrop-blur-md border-b border-gray-200 flex flex-col">
-                {/* Top Branding Bar - College Branding */}
-                <a
-                    href={siteConfig.branding.instituteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block border-b-2 hover:bg-primary-950 transition-colors bg-primary-900 border-primary-950"
-                >
-                    <div className="flex items-center w-full min-h-[48px] py-1 px-2 sm:px-4">
-                        {/* Left Column - Logo */}
-                        <div className="w-10 sm:w-14 flex-shrink-0 flex justify-start">
-                            <div className="bg-white rounded-full p-[3px] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg">
+            <header className="relative z-50 w-full bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 flex flex-col">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    {/* Unified Row: IATMSI Logo, Partner Logos, Submit */}
+                    <div className="relative flex items-center justify-between py-2 lg:py-2 gap-x-2 lg:gap-x-4">
+                        
+                        {/* Conference Logo (Left) */}
+                        <div className="flex-shrink-0 flex items-center">
+                            <Link to={ROUTES.HOME} className="flex items-center hover:opacity-80 transition-opacity">
                                 <img
-                                    src={siteConfig.branding.instituteLogo}
-                                    alt="Institute Logo"
-                                    className="w-full h-full object-contain"
+                                    src={siteConfig.branding.conferenceLogo}
+                                    alt="IATMSI 2027 Logo"
+                                    className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
                                 />
-                            </div>
+                            </Link>
                         </div>
 
-                        {/* Center Column - Text */}
-                        <div className="flex-1 flex items-center justify-center px-2 overflow-hidden">
-                            <h2
-                                className="text-white font-bold uppercase text-center leading-tight tracking-tight"
-                                style={{
-                                    fontSize: 'clamp(0.6rem, 1.6vw, 1.4rem)',
-                                    letterSpacing: '0.01em',
-                                    color: '#ffffff',
-                                    textWrap: 'balance'
-                                }}
-                            >
-                                {siteConfig.branding.instituteName}
-                            </h2>
+                        {/* Partner Logos (Center/Right) */}
+                        <div className="flex flex-1 items-center justify-end lg:justify-center gap-2 sm:gap-4 px-2 sm:px-4">
+                            {siteConfig.branding.partnerLogos.map((logo, index) => (
+                                <div key={logo.id} className="flex items-center gap-2 sm:gap-4">
+                                    <img 
+                                        src={logo.url} 
+                                        alt={logo.alt} 
+                                        className="h-6 sm:h-8 lg:h-10 w-auto object-contain" 
+                                    />
+                                    {index < siteConfig.branding.partnerLogos.length - 1 && (
+                                        <div className="hidden sm:block w-px h-5 sm:h-6 bg-gray-300"></div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
-                    </div>
-                </a>
-
-                {/* Main Branding Row (Logo + Submit) & Navigation */}
-                <div className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        {/* Unified Row: Logo, Navigation, Submit */}
-                        <div className="relative flex flex-col lg:flex-row items-center justify-between py-1.5 lg:py-1.5 gap-y-1">
-                            {/* Conference Acronym (Left) */}
-                            <div className="flex-shrink-0 flex items-center gap-2 w-full lg:w-auto justify-start">
-                                <Link to={ROUTES.HOME} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                                    <div className="bg-white rounded-full p-[2px] w-9 h-9 flex items-center justify-center shadow-lg border border-gray-100">
-                                        <img
-                                            src={siteConfig.branding.conferenceLogo}
-                                            alt="Conference Logo"
-                                            className="w-full h-full object-contain rounded-full"
-                                        />
-                                    </div>
-                                    <span className="font-bold text-primary-900 text-lg md:text-xl tracking-tight whitespace-nowrap pt-1 lg:pt-0">
-                                        {siteConfig.seo.title.split(' |')[0]}
-                                    </span>
-                                </Link>
-                                
-                                {/* Mobile menu button (Right-aligned on mobile) */}
-                                <button
-                                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                    className="lg:hidden p-2 text-gray-500 ml-auto focus:outline-none"
-                                >
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        {isMenuOpen ? (
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                        ) : (
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                        )}
-                                    </svg>
-                                </button>
-                            </div>
-
-                            {/* Submit Button (Right, Desktop Only) */}
-                            <div className="hidden lg:block flex-shrink-0">
+                        
+                        {/* Right Actions: Submit Button & Mobile Menu */}
+                        <div className="flex-shrink-0 flex items-center gap-3">
+                            {/* Submit Button (Desktop Only) */}
+                            <div className="hidden lg:block">
                                 <a
                                     href={siteConfig.externalLinks.submissionPortal.url}
                                     target="_blank"
@@ -103,7 +65,22 @@ export default function Navbar() {
                                     Submit Paper
                                 </a>
                             </div>
+
+                            {/* Mobile menu button */}
+                            <button
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                className="lg:hidden p-1.5 text-gray-500 focus:outline-none"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    {isMenuOpen ? (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    ) : (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    )}
+                                </svg>
+                            </button>
                         </div>
+
                     </div>
                 </div>
             </header>
