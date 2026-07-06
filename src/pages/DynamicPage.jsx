@@ -17,7 +17,7 @@ export default function DynamicPage({ pageId }) {
     return (
         <>
             <div className="relative">
-                <div className="sticky top-0 z-50">
+                <div className={`sticky top-0 z-50 ${heroSection ? 'h-0 overflow-visible w-full' : ''}`}>
                     <Navbar />
                 </div>
                 {heroSection && (
